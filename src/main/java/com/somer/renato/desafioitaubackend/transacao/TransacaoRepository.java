@@ -25,4 +25,8 @@ public class TransacaoRepository {
         log.info("Removendo todas as transaçãoes");
         listaDeTransacoes.clear();
     }
+
+    public List<TransacaoRequest> getListaDeTransacoes() {
+        return listaDeTransacoes;
+    }
 }
