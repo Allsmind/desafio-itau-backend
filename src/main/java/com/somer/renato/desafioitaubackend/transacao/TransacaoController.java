@@ -25,10 +25,21 @@ public class TransacaoController {
         try {
             log.info("Transação recebida");
             transacaoRepository.salvaTransacao(transacaoRequest);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (Exception e) {
             log.error("Erro no recebimento da transação", e.getMessage());
             return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping
+    public ResponseEntity deleteTransacao() {
+        try {
+            log.info("Removendo transações");
+            transacaoRepository.deletaTransacao();
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } catch (Exception e) {
+            return ResponseEntity.unprocessableContent().build();
         }
     }
 
