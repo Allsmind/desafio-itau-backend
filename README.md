@@ -84,6 +84,33 @@ Atualmente o projeto possui o teste de contexto em `DesafioItauBackendApplicatio
 
 Header obrigatório: `Content-Type: application/json`.
 
+## Documentação Swagger (OpenAPI)
+
+A API é documentada com [SpringDoc OpenAPI](https://springdoc.org/). Com a aplicação em execução, acesse:
+
+| Recurso        | URL                                      |
+|----------------|------------------------------------------|
+| Swagger UI     | http://localhost:8080/swagger-ui.html    |
+| Especificação  | http://localhost:8080/api-docs           |
+
+### Como usar o Swagger UI
+
+1. Execute a aplicação (`.\mvnw.cmd spring-boot:run`).
+2. Abra http://localhost:8080/swagger-ui.html no navegador.
+3. Expanda o grupo **Transação** ou **Estatística**.
+4. Clique em **Try it out**, preencha o body (quando aplicável) e em **Execute** para enviar a requisição.
+
+No `POST /transacao`, use um JSON como:
+
+```json
+{
+  "valor": 123.45,
+  "dataHora": "2026-05-26T14:30:00.000-03:00"
+}
+```
+
+A documentação descreve os códigos de resposta **201**, **200**, **400** e **422** conforme o enunciado do desafio.
+
 ## Testando com Postman
 
 ### 1. Subir a API
@@ -143,6 +170,7 @@ Use uma data/hora atual ou no passado (nunca no futuro).
 
 ```
 src/main/java/com/somer/renato/desafioitaubackend/
+├── config/         # Configuração OpenAPI / Swagger
 ├── transacao/      # POST e DELETE /transacao
 ├── estatistica/    # GET /estatistica
 └── exception/      # Tratamento global de erros
