@@ -1,7 +1,6 @@
 package com.somer.renato.desafioitaubackend.transacao;
 
 
-import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;

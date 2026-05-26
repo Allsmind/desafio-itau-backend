@@ -18,6 +18,11 @@ public class TransacaoRepository {
         listaDeTransacoes.add(transacaoRequest);
         log.info("Salvando transação");
         log.info(Integer.toString(listaDeTransacoes.size()));
-        }
+    }
 
+    //REMOVE TODAS AS TRANSAÇÕES DA LISTA
+    public void deletaTransacao() {
+        log.info("Removendo todas as transaçãoes");
+        listaDeTransacoes.clear();
+    }
 }
